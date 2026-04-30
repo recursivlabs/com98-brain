@@ -5,8 +5,13 @@ export const BASE_URL =
   'https://api.recursiv.io/api/v1';
 
 export const BASE_ORIGIN = BASE_URL.replace(/\/api\/v1$/, '');
-export const ORG_ID = process.env.EXPO_PUBLIC_RECURSIV_ORG_ID || '';
-export const PROJECT_ID = process.env.EXPO_PUBLIC_RECURSIV_PROJECT_ID || '';
+// Hardcoded fallbacks for production builds where Coolify env vars aren't set.
+// Org/project IDs are public identifiers, not secrets. Local .env still wins
+// when present (useful if you fork to point at a different project).
+export const ORG_ID =
+  process.env.EXPO_PUBLIC_RECURSIV_ORG_ID || '019ddf5b-8b7a-771c-aefc-dcf04e5dcfd1';
+export const PROJECT_ID =
+  process.env.EXPO_PUBLIC_RECURSIV_PROJECT_ID || '019ddf6f-113d-776e-9ceb-9b3cebe307ea';
 
 export function createAuthedSdk(apiKey: string): Recursiv {
   return new Recursiv({

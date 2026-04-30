@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "COM98 Brain",
+    "slug": "com98-brain",
+    "version": "1.0.0",
+    "scheme": "com98-brain",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
